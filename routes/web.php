@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {	
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/categorias', 'CategoryController@index')->name('categories');
+Route::get('/get/categories', 'CategoryController@store')->name('getCategories');

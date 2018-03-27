@@ -4,7 +4,7 @@
 @include('layouts.html-head')
 
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div class="wrapper" id="app">
 
   
   @include('layouts.html-header')
