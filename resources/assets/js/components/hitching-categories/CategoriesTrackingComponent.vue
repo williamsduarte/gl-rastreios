@@ -1,15 +1,7 @@
 <template>
-  <div>
-     <div class="form-group">
-        <h3>Categorias: {{ category.name }}</h3>
-      </div>
-      <div class="form-group">
-        <p class="help-block">Subcategorias:                 
-          <ul>
-            <li v-for="subcategory in subcategories">{{ subcategory.name }}</li>
-          </ul>          
-          </p>
-      </div>
+  <div class="form-group">
+    <h1>{{ subcategory.name }}</h1>
+    <h4>Categoria principal: <strong>{{ category.name }}</strong> </h4>
   </div>
 </template>
 
@@ -19,34 +11,23 @@
     data() {
       return {
         category: [],
-        subcategories: []
+        subcategory: []
       }
     },
     created() {
 
       let self = this;
 
-      axios.get('/get/category/tracking')
+      axios.get('/get/subcategory/tracking')
         .then(function (response) {
-          self.category = response.data;
-          self.subcategories = response.data.subcategories;
+          self.subcategory = response.data;
+          self.category = response.data.category;
         })
         .catch(function (error) {
           console.log(error);
         });
         
-    },
-    methods: {
-      agroupSubcategory() {
-
-        console.log(this.subcategories);
-
-        let subsPush = [];
-        subsPush.push( this.subcategories.name );
-
-        return subsPush;
-      }
-    },
+    },  
     mounted() {
          //console.log(this.subcategories);
     }

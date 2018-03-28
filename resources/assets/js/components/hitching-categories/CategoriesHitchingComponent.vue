@@ -8,7 +8,7 @@
     <form role="form">
       <div class="box-body">        
         <CategoriesTracking />
-        <CategoriesGL />
+        <CategoriesGL class="marginTop" />
       </div>
       <!-- /.box-body -->
 
@@ -31,3 +31,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .marginTop {
+    margin-top: 20px;
+  }
+</style>
