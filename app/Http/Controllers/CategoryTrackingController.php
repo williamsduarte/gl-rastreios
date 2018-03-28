@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
+use App\CategoryTracking;
 
-class CategoryController extends Controller
+class CategoryTrackingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('categories');
+        //
     }
 
     /**
@@ -35,7 +35,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        return Category::orderBy('name', 'asc')->get();
+        return CategoryTracking::with('subcategories')
+            ->where('done', 0)
+            ->orderBy('name', 'asc')
+            ->take(1)->first();
     }
 
     /**
@@ -46,7 +49,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
 
     /**
