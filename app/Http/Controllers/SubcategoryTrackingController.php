@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SubcategoryTracking;
+use App\CategoryTracking;
 
 class SubcategoryTrackingController extends Controller
 {
@@ -37,6 +38,7 @@ class SubcategoryTrackingController extends Controller
     {
         return SubcategoryTracking::with('category')
             ->where('done', 0)
+            ->where('cat_guia', 0)
             ->orderBy('name', 'asc')
             ->take(1)->first();
     }
@@ -63,16 +65,20 @@ class SubcategoryTrackingController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+
+        SubcategoryTracking::where('done', 0)
+            ->where('id', $request->subcategory_id)
+            ->update(['done' => 1, 'cat_guia' => $request->category_gl]);
+
+        CategoryTracking::where('done', 0)
+            ->where('id', $request->category_id)
+            ->update(['done' => 1, 'cat_guia' => $request->category_gl]);
+
+        
+        return redirect()->route('categories')->with('status', 'As catagorias foram atreladas com sucesso!');
+
     }
 
     /**

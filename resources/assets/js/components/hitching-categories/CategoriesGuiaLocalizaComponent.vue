@@ -1,8 +1,8 @@
 <template>
   <div class="form-group">
     <label>Selecione a categoria do GuiaLocaliza</label>
-    <select class="form-control select2" style="width: 100%;">
-      <option selected="selected">Selecione</option>
+    <select class="form-control select2" required name="category_gl" style="width: 100%;">
+      <option selected="selected" value="">Selecione</option>
       <option v-for="option in options" v-bind:value="option.id">
         {{ option.name }}
       </option>

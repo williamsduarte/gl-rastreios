@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/categorias', 'CategoryController@index')->name('categories');
-Route::get('/get/categories', 'CategoryController@store')->name('getCategories');
+Route::get('/get/categories', 'CategoryController@all')->name('getCategories');
+Route::post('/post/category', 'SubcategoryTrackingController@update')->name('postCategory');
+
 Route::get('/get/subcategory/tracking', 'SubcategoryTrackingController@store')->name('categoryTracking');

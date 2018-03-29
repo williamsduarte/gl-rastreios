@@ -7,6 +7,13 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+
+    public function all()
+    {
+        return Category::orderBy('name', 'asc')->get();
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +42,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        return Category::orderBy('name', 'asc')->get();
+        
     }
 
     /**
