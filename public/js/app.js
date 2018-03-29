@@ -30131,7 +30131,11 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group"
-  }, [_c('h1', [_vm._v(_vm._s(_vm.subcategory.name))]), _vm._v(" "), _c('h4', [_vm._v("Categoria principal: "), _c('strong', [_vm._v(_vm._s(_vm.category.name))])]), _vm._v(" "), _c('input', {
+  }, [_c('h4', [_vm._v("Categoria: "), _c('strong', [_vm._v(_vm._s(_vm.category.name))])]), _vm._v(" "), _c('h1', [_c('span', {
+    staticStyle: {
+      "font-size": "18px"
+    }
+  }, [_vm._v("Atrelar por: ")]), _vm._v(_vm._s(_vm.subcategory.name))]), _vm._v(" "), _c('input', {
     attrs: {
       "type": "hidden",
       "name": "subcategory_id"

@@ -1,7 +1,8 @@
 <template>
   <div class="form-group">
     <h4>Categoria: <strong>{{ category.name }}</strong> </h4>
-    <h1>{{ subcategory.name }}</h1>
+     
+    <h1><span style="font-size:18px;">Atrelar por: </span>{{ subcategory.name }}</h1>
     <input type="hidden" name="subcategory_id" v-bind:value="subcategory_id">
     <input type="hidden" name="category_id" v-bind:value="category_id">
   </div>
