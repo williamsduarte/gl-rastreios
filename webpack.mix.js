@@ -11,10 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/app.js', 'public/js');
 
 
-mix.copyDirectory('bower_components', 'public/bower_components');
-mix.copyDirectory('node_modules/admin-lte/plugins', 'public/plugins');
-mix.copyDirectory('node_modules/admin-lte/dist', 'public/dist');
+// mix.copyDirectory('bower_components', 'public/bower_components');
+// mix.copyDirectory('node_modules/admin-lte/plugins', 'public/plugins');
+// mix.copyDirectory('node_modules/admin-lte/dist', 'public/dist');
