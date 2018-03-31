@@ -39,7 +39,7 @@ class SubcategoryTrackingController extends Controller
         return SubcategoryTracking::with('category')
             ->where('done', 0)
             ->where('cat_guia', 0)
-            ->orderBy('name', 'asc')
+            ->inRandomOrder()
             ->take(1)->first();
     }
 
