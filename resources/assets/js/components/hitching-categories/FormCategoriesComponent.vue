@@ -1,13 +1,13 @@
 <template>
   <div class="box box-primary">
     <div class="box-header with-border">
-      <h3 class="box-title">Categorias Rastreios</h3>
+      <h3 class="box-title">Total de categorias já atreladas <strong>{{ done }}</strong> de 1374</h3> 
     </div>
     <!-- /.box-header -->
     <!-- form start -->
     <form role="form" method="post" action="/post/category">
       <div class="box-body">        
-        <CategoriesTracking />
+        <CategoriesTracking @totalDone="done = $event"/>
         <CategoriesGL class="marginTop" />
       </div>
       <!-- /.box-body -->
@@ -32,13 +32,13 @@
     },
     data() {
       return {
-        csrf_token: ''
+        csrf_token: '',
+        done: 0
       }
     },
     mounted() {
       let token = document.head.querySelector('meta[name="csrf-token"]');
-      this.csrf_token = token.content;      
-
+      this.csrf_token = token.content;  
     }
   }
 </script>

@@ -23,3 +23,4 @@ Route::get('/get/categories', 'CategoryController@all')->name('getCategories');
 Route::post('/post/category', 'SubcategoryTrackingController@update')->name('postCategory');
 
 Route::get('/get/subcategory/tracking', 'SubcategoryTrackingController@store')->name('categoryTracking');
+Route::get('/get/subcategory/total', 'SubcategoryTrackingController@total')->name('totalTracking');
