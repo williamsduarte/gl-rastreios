@@ -21,13 +21,11 @@ export default {
   },
   methods: {
 
-    updateCombo: () => {
+    updateCombo: function (event) {
 
-      this.options = [];
-      this.getCategories(this)
 
-    },
-    getCategories: (self) => {
+      let self = this;
+      self.options = [];
 
       axios.get('/get/categories')
         .then(function (response) {
@@ -36,12 +34,23 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
+
+
+
     }
 
   },
   created() {
 
-    this.getCategories(this)
+    let self = this;
+
+    axios.get('/get/categories')
+      .then(function (response) {
+        self.options = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
   },
   mounted() {

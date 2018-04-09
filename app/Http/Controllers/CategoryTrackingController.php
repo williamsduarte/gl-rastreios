@@ -15,7 +15,7 @@ class CategoryTrackingController extends Controller
    */
   public function all()
   {
-    return CategoryTracking::where('done', '=', 0)
+    return CategoryTracking::where('done', 0)
         ->orderBy('name', 'asc')
         ->get();
   }
