@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\CategoryTracking;
+use App\Category;
 
 class SubcategoryTracking extends Model
 {
@@ -12,6 +13,11 @@ class SubcategoryTracking extends Model
 
     public function category()
     {
-        return $this->hasOne(CategoryTracking::class, 'id', 'category_id');
+        return $this->hasOne(Categoryg::class, 'id', 'category_id');
+    }
+
+    public function catguia()
+    {
+        return $this->hasOne(Category::class, 'id', 'cat_guia');
     }
 }

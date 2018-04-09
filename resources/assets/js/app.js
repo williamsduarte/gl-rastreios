@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('categories-component', require('./components/hitching-categories/FormCategoriesComponent.vue'));
+Vue.component('refactory-component', require('./components/refactory-categories/RefactoryComponent.vue'));
+
 
 const app = new Vue({
     el: '#app'

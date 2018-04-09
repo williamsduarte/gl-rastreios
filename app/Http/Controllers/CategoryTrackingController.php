@@ -7,6 +7,20 @@ use App\CategoryTracking;
 
 class CategoryTrackingController extends Controller
 {
+
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function all()
+  {
+    return CategoryTracking::where('done', '=', 0)
+        ->orderBy('name', 'asc')
+        ->get();
+  }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +28,7 @@ class CategoryTrackingController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,10 +49,7 @@ class CategoryTrackingController extends Controller
      */
     public function store(Request $request)
     {
-        return CategoryTracking::with('subcategories')
-            ->where('done', 0)
-            ->orderBy('name', 'asc')
-            ->take(1)->first();
+
     }
 
     /**
