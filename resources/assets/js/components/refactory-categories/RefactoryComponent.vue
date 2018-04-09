@@ -19,7 +19,10 @@
           <td v-if="subcat.catguia">{{ subcat.catguia.name }}</td>
           <td v-else>...</td>
           </td>
-          <td><i class="fa fa-thumbs-up fa-2x text-success" @click="fncSuccess(subcat.id)" title="OK!"></i> <i class="fa fa-thumbs-down fa-2x text-danger" @click="fncRefactory(subcat.id)" title="Refazer!"></i></td>
+          <td>
+            <i class="fa fa-thumbs-up fa-2x text-success" @click="fncSuccess(subcat)" title="OK!"></i>
+            <i class="fa fa-thumbs-down fa-2x text-danger" @click="fncRefactory(subcat)" title="Refazer!"></i>
+          </td>
         </tr>
       </tbody>
 
@@ -58,13 +61,13 @@ export default {
           console.log(error);
         });
     },
-    fncSuccess: (id) => {
-      if (confirm('Confirma a conclusão?')) {
+    fncSuccess: (sub) => {
+      if (confirm(`Confirma a CONCLUSÃO para ${sub.name}?`)) {
 
-        $('[data-js="' + id + '"]').fadeToggle('1000', function () {
+        $('[data-js="' + sub.id + '"]').fadeToggle('1000', function () {
 
           axios.post('/post/subcategories/refactory', {
-              id: id,
+              id: sub.id,
               done: 2
             })
             .then(function (response) {
@@ -80,17 +83,17 @@ export default {
       }
 
     },
-    fncRefactory: (id) => {
-      if (confirm('Confirma a refatoração?')) {
+    fncRefactory: (sub) => {
+      if (confirm(`Confirma a REFATORACÃO para ${sub.name}?`)) {
 
-        $('[data-js="' + id + '"]').fadeToggle('1000', function () {
+        $('[data-js="' + sub.id + '"]').fadeToggle('1000', function () {
 
           axios.post('/post/subcategories/refactory', {
-              id: id,
+              id: sub.id,
               done: 0
             })
             .then(function (response) {
-              console.log('Refatoração: ' + id)
+              console.log('Refatoração: ' + sub.id)
               $(this).hide()
             })
             .catch(function (error) {
