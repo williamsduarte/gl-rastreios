@@ -40,9 +40,10 @@ export default {
 
           self.subcategory = response.data;
           self.subcategory_id = response.data.id;
-
-          self.category = response.data.category;
-          self.category_id = response.data.category.id;
+          if(response.data.category) {
+            self.category = response.data.category;
+            self.category_id = response.data.category.id;
+          }          
 
         })
         .catch(function (error) {
