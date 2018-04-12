@@ -102,7 +102,7 @@ class SubcategoryTrackingController extends Controller
 
     public function total()
     {
-        return SubcategoryTracking::where('cat_guia', '>', 0)->count();
+        return SubcategoryTracking::where('done', 1)->count();
     }
 
     public function refactory(Request $request)
