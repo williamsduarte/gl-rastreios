@@ -99,10 +99,9 @@ class SubcategoryTrackingController extends Controller
         //
     }
 
-
     public function total()
     {
-        return SubcategoryTracking::where('done', 1)->count();
+        return SubcategoryTracking::where('done', '>', 0)->count();
     }
 
     public function refactory(Request $request)
