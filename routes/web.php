@@ -24,6 +24,11 @@ Route::get('/get/subcategories/refactory', 'SubcategoryTrackingController@all')-
 Route::post('/post/subcategories/refactory', 'SubcategoryTrackingController@refactory')->name('getCategoriesRefactory');
 
 
+Route::get('/revisao', 'ReviewController@index')->name('review');
+Route::get('/get/subcategories/review', 'SubcategoryTrackingController@reviewAll')->name('getCategoriesReview');
+Route::post('/post/subcategories/review', 'SubcategoryTrackingController@review')->name('getSubCategoriesReview');
+
+
 Route::get('/categorias', 'CategoryController@index')->name('categories');
 Route::get('/get/categories', 'CategoryController@all')->name('getCategories');
 Route::post('/post/category', 'SubcategoryTrackingController@update')->name('postCategory');

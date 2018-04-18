@@ -18,11 +18,17 @@
     <li>
       <a href="{{ route('refactory') }}">
         <i class="fa fa-recycle"></i> <span>Refatoração</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ route('review') }}">
+        <i class="fa fa-eye"></i> <span>Revisão</span>
         <span class="pull-right-container">
           <small class="label pull-right bg-green">new</small>
         </span>
       </a>
     </li>
+
 
   </ul>
 </section>

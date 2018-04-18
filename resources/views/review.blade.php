@@ -10,7 +10,7 @@
     @endif
 
     <div>
-      <refactory-component />
+      <review-component />
     </div>
 
 @endsection

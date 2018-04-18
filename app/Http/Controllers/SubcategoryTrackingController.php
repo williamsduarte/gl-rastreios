@@ -9,13 +9,22 @@ use App\CategoryTracking;
 class SubcategoryTrackingController extends Controller
 {
 
-  public function all()
-  {
-      return SubcategoryTracking::with('catguia')
-        ->where('done', 1)
-        ->orderBy('name', 'asc')
-        ->get();
-  }
+    public function reviewAll()
+    {
+        return SubcategoryTracking::with('catguia')
+            ->where('done', 2)
+            ->orderBy('name', 'asc')
+            ->get();
+    }
+
+    public function all()
+    {
+        return SubcategoryTracking::with('catguia')
+            ->where('done', 1)
+            ->orderBy('name', 'asc')
+            ->get();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +48,7 @@ class SubcategoryTrackingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,7 +62,7 @@ class SubcategoryTrackingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,7 +73,7 @@ class SubcategoryTrackingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -91,7 +100,7 @@ class SubcategoryTrackingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
