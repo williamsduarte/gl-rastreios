@@ -12,7 +12,7 @@ class SubcategoryTrackingController extends Controller
     public function reviewAll()
     {
         return SubcategoryTracking::with('catguia')
-            ->where('done', 2)
+            ->where('done', 3)
             ->orderBy('name', 'asc')
             ->get();
     }
